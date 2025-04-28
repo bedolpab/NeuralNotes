@@ -1,9 +1,10 @@
 const notesGrid = document.getElementById('notes-grid');
 const previewPane = document.getElementById('preview-pane');
 
-const directory = "src/qnotes/";
-const prefix = "qq_note_";
+const directory = "../cnotes/";
+const prefix = "c_note_";
 let index = 0;
+let imagesLoaded = 0; 
 
 function loadNextImage() {
   const src = `${directory}${prefix}${index}.png`;
@@ -34,12 +35,21 @@ function loadNextImage() {
 
     notesGrid.appendChild(container);
 
+    imagesLoaded++;
     index++;
     loadNextImage();
   };
 
   img.onerror = () => {
-    console.log('No more images after index', index - 1);
+    const emptyNotes = document.getElementById('preview-pane').querySelector("p");
+
+    if (imagesLoaded === 0) {
+      emptyNotes.innerText = "No Data to Show";
+    } else {
+      console.log('No more images after index', index - 1);
+      emptyNotes.innerText = "Select data to show";
+      console.log(index - 1);
+    }
   };
 
   img.src = src;
