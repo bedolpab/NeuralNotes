@@ -1,7 +1,7 @@
 const notesGrid = document.getElementById('notes-grid');
 const previewPane = document.getElementById('preview-pane');
 
-const directory = "/quantum_corpus/notes/";
+const directory = "src/qnotes/";
 const prefix = "qq_note_";
 let index = 0;
 
