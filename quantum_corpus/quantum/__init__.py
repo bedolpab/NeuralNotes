@@ -1,14 +1,8 @@
 """Quantum notes package."""
 
-from quantum import *
+from .quantum_util import complex_addition
 
-try:
-    __all__ = [
-        "",
-    ]
-except ImportError as e:
-    print(f"Warning: Unable to import functions from 'quantum' package: {e}")
-    __all__ = [""]
+__all__ = ["complex_addition"]
 
 if __name__ == "__main__":
     print(f"Running {__file__} directly.")
