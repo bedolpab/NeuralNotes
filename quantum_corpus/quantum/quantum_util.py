@@ -61,3 +61,22 @@ def complex_division(a: list[int], b: list[int]) -> str:
     term_2 = term_2_numerator / denominator
 
     return f"{term_1} + {term_2}i"
+
+
+def complex_modulus(num: list[int]) -> str:
+    """The modulus of a complex number
+
+    Args:
+    -----
+        num: Complex number in the form (a + bi).
+
+    Returns
+    -------
+        The modulus of a complex number, namely:
+        sqrt(a^2 + b^2)
+
+    """
+    a_term = num[0] ** 2
+    b_term = num[1] ** 2
+
+    return f"sqrt({a_term + b_term})"
